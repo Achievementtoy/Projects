@@ -15,14 +15,19 @@ namespace _4380_Project
             assembler = new Assembler(filename);
             Console.WriteLine("Assembler has finished, running virtual machine");
             Console.WriteLine(Assembler.PC);
+            var ProgramCounter = Assembler.PC;
             bool running = true;
             try
             {
                 
                 while (running)
                 {
-                    break;
-                    
+                    var iropcode = Assembler.list[ProgramCounter];
+                    var irop1 = Assembler.list[ProgramCounter + 4];
+                    var irop2 = Assembler.list[ProgramCounter + 8];
+
+                    ProgramCounter += 12;
+
                 }
             }
             catch (Exception e)
